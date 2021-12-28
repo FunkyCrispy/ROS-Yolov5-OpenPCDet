@@ -1,8 +1,0 @@
-prefix=/home/fengchen/projects/ros-yolov5-pointpillar/devel
-
-Name: rospy_sensorfusion
-Description: Description of rospy_sensorfusion
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
