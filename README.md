@@ -10,6 +10,20 @@ Yolov5 and OpenPCDet are modules of this project, thus importing sentences in so
 Also, some other places are modified in order to correctly work. Similarly, some files in yolov5 module also add 'yolov5' in front of module names. 
 **For model training process, its suggested to download Yolov5 or OpenPCDet source code and training separately.**
 
+Through ROS's ApproximateTimeSynchronizer in message_filters module, we get synchronized message pair of topic:
+```
+/rslidar_points  --  lidar
+/ue09_pylon02/image_raw  --  camera
+```
+And publish topic:
+```
+/sensor_fusion/detection_bbox  --  boundingbox message
+/sensor_fusion/detection_img  --  image plotted bboxes
+/sensor_fusion/sync_pcl  --  synchronized point cloud for better visualization
+```
+Now the **total processing time cost around 0.30s**, the yolov5 inference and get semantic image part cost 0.19s, the semantic point cloud generation part cost 0.08s, the OpenPCDet model PointPillar cost 0.02s.
+
+Further acceleration is necessary.
 
 ## Module's Source Codes
 ```
