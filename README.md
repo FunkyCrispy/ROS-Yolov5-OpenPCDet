@@ -21,7 +21,7 @@ And publish topic:
 /sensor_fusion/detection_img  --  image plotted bboxes
 /sensor_fusion/sync_pcl  --  synchronized point cloud for better visualization
 ```
-Now the **total processing time cost around 0.26s**, the yolov5 inference and get semantic image part cost 0.20s, the semantic point cloud generation part cost 0.04s, the OpenPCDet model PointPillar cost 0.02s.
+Now the **total minmal processing time cost around 0.17s**, the yolov5 inference and get semantic image part cost 0.08s, the semantic point cloud generation part cost 0.04s, the OpenPCDet model PointPillar cost 0.02s, and topic message synchronization and publishing cost the rest of time.
 
 Further acceleration is necessary.
 
