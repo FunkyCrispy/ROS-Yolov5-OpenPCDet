@@ -1,0 +1,32 @@
+<launch>
+
+  <!-- choose bag name-->
+  <arg name="bag_name" default="ue09_2021-07-20-19-28-16"/>
+
+  <!-- Choose replay speed -->
+  <arg name="speed" default="0.5"/>
+
+  <!-- Choose replay delay -->
+  <arg name="delay" default="3" />
+  
+  <arg name = "play_rosbag" default = "1"/>
+  <arg name = "rospy_sensorfusion" default = "1"/>
+  <arg name = "rviz" default = "1"/>
+
+  <!-- Play rosbag file -->
+  <group if="$(arg play_rosbag)">
+      <node pkg="rosbag" type="play" name="player" args="-r $(arg speed) -d $(arg delay) --clock $(find rospy_sensorfusion)bag/ue09-2021-0730.bag" />
+  </group>
+  
+  <!-- Run the sensor fusion node -->
+  <group if="$(arg rospy_sensorfusion)">
+    <node pkg="rospy_sensorfusion" type="sensor_fusion.py" name="sensor_fusion_node" output="screen" />
+  </group>
+
+  <!-- Launch rviz for visualization -->
+  <group if="$(arg rviz)">
+  <node pkg="rviz" type="rviz" name="my_rviz"
+	   args="-d $(find rospy_sensorfusion)config/sensor_fusion_sync.rviz"/>
+  </group>
+     
+</launch>

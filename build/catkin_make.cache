@@ -1,0 +1,2 @@
+rospy_sensorfusion
+-DPYTHON_EXECUTABLE=/home/anaconda3/envs/ros-py36/bin/python -DCATKIN_DEVEL_PREFIX=/home/fengchen/projects/ros-yolov5-pointpillar/devel -DCMAKE_INSTALL_PREFIX=/home/fengchen/projects/ros-yolov5-pointpillar/install -G Unix Makefiles

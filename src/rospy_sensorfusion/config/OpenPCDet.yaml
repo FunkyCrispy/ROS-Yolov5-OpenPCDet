@@ -1,0 +1,5 @@
+
+cfg_file: '/home/fengchen/projects/ros-yolov5-openpcdet/src/rospy_sensorfusion/src/OpenPCDet/tools/cfgs/rod_models/pointpillar_fc.yaml'
+ckpt: '/home/fengchen/projects/ros-yolov5-openpcdet/src/rospy_sensorfusion/src/OpenPCDet/output/kitti_models/pointpillar_fc/default/ckpt/checkpoint_epoch_80.pth'
+data_path: None
+ext: '.bin'

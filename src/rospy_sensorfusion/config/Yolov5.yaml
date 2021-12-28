@@ -1,0 +1,23 @@
+weights: '/home/fengchen/projects/ros-yolov5-openpcdet/src/rospy_sensorfusion/src/yolov5/weights/yolov5s.pt'
+imgsz: 640
+conf_thres: 0.25
+iou_thres: 0.45
+max_det: 1000
+device: ''
+
+view_img: False
+save_txt: False
+save_conf: False
+save_crop: False
+nosave: False
+agnostic_nms: False
+augment: False
+visualize: False
+update: False
+project: 'runs/detect'
+name: 'exp'
+exist_ok: False
+line_thickness: 3
+hide_labels: False
+hide_conf: False
+half: True
